@@ -1,0 +1,29 @@
+database basic commands
+-> mysql -u root -p
+-> show databases; #for listing databases
+-> create database dbname; # for create database
+-> create user 'username'@'localhost' identified by 'password'; #create user in mysql
+-> grant all on mylabdb.* to 'username' identified by 'password'; # map user with database and give privileges
+-> flush privileges; # for save privileges changes
+-> select user from mysql.user; # for show all user in mysql
+-> use dbname; # for enter the db
+-> create table tablename (empname char(20),deptt char(20),title(15)); #for create table in database
+-> describe tablename; #for description of table
+-> show tables; # listing tables
+-> insert into tablename (empname,deptt,tittle) VALUES("mohit rana","IT","ENG"); # insert values in table
+-> select * from dbname.tablename; #for show the table entry of values
+-> drop table tablename; #for remove table from the db
+-> drop database dbname; # for remove db from the mysql
+-> show processlist; # for show how many user connected and query and so on.
+-> mysqldump -u root -p dbname > /path/db_backup.sql # for take backup of database
+-> openssl enc -aes-256-cbc -in /db_back/alldb_back.sql -out /db_back/dummy.file # for encrypted db
+-> mysql -u root -p mohit < db_back/mohitdb_backup.sql # for restore db
+   NOTE: create db before restore incase single db restoration.
+-> mysqld_safe --skip-grant-tables & #for safe mode mysql --skip-grant for not prompt password, NOTE: use for reset forgotten root password, first of all stop mysql service.
+-> mysql -u root
+-> use mysql
+-> update user set password=PASSWORD("cws1") where User='root'; # for change or reset root user password.
+-> flush privileges; 
+-> service stop mysqld # stop database from safe mode
+-> mysqladmin -u root -p shutdown # for shutdown mysql process if not stop from other command 
+   
