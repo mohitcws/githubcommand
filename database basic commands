@@ -27,3 +27,5 @@ database basic commands
 -> service stop mysqld # stop database from safe mode
 -> mysqladmin -u root -p shutdown # for shutdown mysql process if not stop from other command 
    
+
+   
